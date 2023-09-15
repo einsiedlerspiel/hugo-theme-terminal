@@ -5,10 +5,10 @@ paginate = 5
 
 [params]
   contentTypeName = "posts"
-  themeColor = "orange"
+  themeColor = "pink"
   showMenuItems = 2
   fullWidthTheme = false
-  centerTheme = false
+  centerTheme = true
 
 [languages]
   [languages.en]
@@ -33,3 +33,6 @@ paginate = 5
         identifier = "showcase"
         name = "Showcase"
         url = "/showcase"
+
+[markup.goldmark.renderer]
+  unsafe = true
