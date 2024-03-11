@@ -1,4 +1,3 @@
-
 Hugo Theme for my Personal Website. Adapted from Panrs [Terminal Theme](https://github.com/panr/hugo-theme-terminal/)
 
 ----
@@ -25,13 +24,20 @@ Hugo Theme for my Personal Website. Adapted from Panrs [Terminal Theme](https://
 
 - **5 duotone themes**, depending on your preferences (orange is default, red, blue, green, pink)
 - [**Fira Code**](https://github.com/tonsky/FiraCode) as default monospaced font. It's gorgeous!
-- Custom serverside syntax highlighting using Hugos default Chroma.
+- custom serverside syntax highlighting using Hugos default Chroma.
 - minimal JS.
 - fully responsive
 - fully based on Hugo ecosystem (Pipes and Modules)
 
 #### Built-in shortcodes
 
+- **`framed`** 
+  - e.g.
+  ```go
+  {{%framed%}}
+  This text will be framed.
+  {{%/framed%}}
+  ```
 - **`image`** (props required: **`src`**; props optional: **`alt`**, **`position`** (**left** is default | center | right), **`style`**)
   - e.g.
   ```go
@@ -80,7 +86,7 @@ A custom syntax highlighting based on Chroma. All you need to do is to wrap you 
 
 ## How to start
 
-You can download the theme manually by going to [https://github.com/panr/hugo-theme-terminal.git](https://github.com/panr/hugo-theme-terminal.git) and pasting it to `themes/terminal` in your root directory.
+You can download the theme manually by going to [https://git.repetitions.de/hugo-theme-terminal](https://git.repetitions.de/hugo-theme-terminal) and pasting it to `themes/terminal` in your root directory.
 
 You can also choose **one of the 3 possibilities** to install the theme:
 
@@ -116,7 +122,7 @@ Keep in mind that the theme by default won't show up in the `themes` directory. 
 ### Install theme locally
 
 ```bash
-git clone https://github.com/panr/hugo-theme-terminal.git themes/terminal
+git clone https://git.repetitions.de/hugo-theme-terminal.git themes/terminal
 ```
 
 This will clone the repository directly to the `themes/terminal` directory.
@@ -124,7 +130,7 @@ This will clone the repository directly to the `themes/terminal` directory.
 ### Install theme as a submodule
 
 ```bash
-git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
+git submodule add -f https://git.repetitions.de/hugo-theme-terminal.git themes/terminal
 ```
 
 This will install the repository as a sumbodule in the `themes/terminal` directory.
@@ -149,15 +155,11 @@ and go to `localhost:1313` in your browser. From now on all the changes you make
 
 The theme doesn't require any advanced configuration. Just copy the `config.toml` of the example site.
 
-## Post archetype
-
-See the default `post` file params supported by the theme — https://github.com/panr/hugo-theme-terminal/blob/master/archetypes/posts.md
-
 ## Add-ons
 
-- **Comments** — for adding comments to your blog posts please take a look at `layouts/partials/comments.html` https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/comments.html.
-- **Extended Head** — please take a look at `layouts/partials/extended_head.html` https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/extended_head.html
-- **Extended Footer** — please take a look at `layouts/partials/extended_footer.html` https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/extended_footer.html
+- **Comments** — for adding comments to your blog posts please take a look at `layouts/partials/comments.html`.
+- **Extended Head** — please take a look at `layouts/partials/extended_head.html`.
+- **Extended Footer** — please take a look at `layouts/partials/extended_footer.html`.
 
 ## How to edit the theme <a id="how-to-edit" />
 
@@ -168,6 +170,7 @@ If you have the theme files in the theme directory, then you can directly edit a
 ## License
 
 Copyright © 2019-2022 Radosław Kozieł ([@panr](https://twitter.com/panr))
+
 Copyright ©      2024 Lou Woell
 
-The theme is released under the MIT License. Check the [original theme license](https://github.com/panr/hugo-theme-terminal/blob/master/LICENSE.md) for additional licensing information.
+The theme is released under the MIT License. Check the [original theme license](https://git.repetitions.de/hugo-theme-terminal/file/LICENSE.md.html) for additional licensing information.
