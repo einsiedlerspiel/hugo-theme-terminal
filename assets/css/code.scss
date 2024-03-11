@@ -11,20 +11,11 @@
   }
 
   input[type="checkbox"]:checked {
-    ~ pre,
-    ~ .code-toolbar pre {
+    ~ div,
+    ~ .highlight pre {
       height: 0;
       padding: 0;
       border-top: none;
-    }
-
-    ~ .code-toolbar {
-      padding: 0;
-      border-top: none;
-
-      .toolbar {
-        display: none;
-      }
     }
 
     ~ label .collapsable-code__toggle:after {
@@ -78,7 +69,4 @@
     }
   }
 
-  .code-toolbar {
-    margin: 0;
-  }
 }

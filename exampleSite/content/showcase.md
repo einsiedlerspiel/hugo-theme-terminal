@@ -14,6 +14,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum met
 
 Nulla libero turpis, lacinia vitae cursus ut, auctor dictum nisl. Fusce varius felis nec sem ullamcorper, at convallis nisi vestibulum. Duis risus odio, porta sit amet placerat mollis, tincidunt non mauris. Suspendisse fringilla, `odio a dignissim pharetra`, est urna sollicitudin urna, eu scelerisque magna ex vitae tellus.
 
+{{< code language="css" title="Really cool snippet" id="1" expand="Show" collapse="Hide" isCollapsed="true" >}}
+pre {
+  background: #1a1a1d;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  overflow: auto;
+
+  @media (--phone) {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  code {
+    background: none !important;
+    color: #ccc;
+    padding: 0;
+    font-size: inherit;
+  }
+}
+{{< /code >}}
 
 ```common-lisp
 (defun test (str)
