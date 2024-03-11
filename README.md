@@ -1,17 +1,7 @@
-# Terminal
 
-## The theme is no longer maintained, but can still be used
-
-Even if the repository is archived you can still use the theme, fork it, download it, expand it, etc. Remember that each Hugo theme is a module that can be modified to match your needs. The theme is fully "open" and it depends only on the internal engines implemented in Hugo.
-
-The theme brings many useful features thanks to [all people that contributed to it](https://github.com/panr/hugo-theme-terminal/graphs/contributors) (I want to thank you all!). At the time of archiving the theme has reached 9th place on the [official Hugo Themes list](https://themes.gohugo.io/). This is huge! Thanks to you!
+Hugo Theme for my Personal Website. Adapted from Panrs [Terminal Theme](https://github.com/panr/hugo-theme-terminal/)
 
 ----
-
-![Terminal](https://github.com/panr/hugo-theme-terminal/blob/master/images/screenshot.png?raw=true)
-
-
-### DEMO - https://hugo-terminal.now.sh/
 
 ### ⚠️ The theme needs at least Hugo **Extended** v0.90.x.
 
@@ -35,7 +25,8 @@ The theme brings many useful features thanks to [all people that contributed to 
 
 - **5 duotone themes**, depending on your preferences (orange is default, red, blue, green, pink)
 - [**Fira Code**](https://github.com/tonsky/FiraCode) as default monospaced font. It's gorgeous!
-- **really nice duotone**, custom syntax highlighting based on [**PrismJS**](https://prismjs.com)
+- Custom serverside syntax highlighting using Hugos default Chroma.
+- minimal JS.
 - fully responsive
 - fully based on Hugo ecosystem (Pipes and Modules)
 
@@ -79,15 +70,13 @@ The theme brings many useful features thanks to [all people that contributed to 
 
 #### Code highlighting
 
-A custom syntax highlighting based on PrismJS. All you need to do is to wrap you code like this:
+A custom syntax highlighting based on Chroma. All you need to do is to wrap you code like this:
 
 ````
 ```html
   // your code here
 ```
 ````
-
-**Supported languages**: actionscript, apacheconf, applescript, bash, c, clike, cmake, coffeescript, cpp, csharp, csp, css, css-extras, diff, django, docker, elixir, elm, erlang, flow, fsharp, git, go, graphql, haml, handlebars, haskell, http, java, javascript, json, jsx, kotlin, latex, less, llvm, makefile, markdown, markup, markup-templating, nasm, objectivec, ocaml, perl, php, php-extras, powershell, processing, pug, python, r, reason, ruby, rust, sass, scala, scheme, scss, sql, stylus, swift, textile, toml, tsx, twig, typescript, vim, visual-basic, wasm, yaml.
 
 ## How to start
 
@@ -158,117 +147,7 @@ and go to `localhost:1313` in your browser. From now on all the changes you make
 
 ## How to configure
 
-The theme doesn't require any advanced configuration. Just copy:
-
-```toml
-baseurl = "/"
-languageCode = "en-us"
-# Add it only if you keep the theme in the `themes` directory.
-# Remove it if you use the theme as a remote Hugo Module.
-theme = "terminal"
-paginate = 5
-
-[params]
-  # dir name of your main content (default is `content/posts`).
-  # the list of set content will show up on your index page (baseurl).
-  contentTypeName = "posts"
-
-  # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "orange"
-
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
-
-  # show selector to switch language
-  showLanguageSelector = false
-
-  # set theme to full screen width
-  fullWidthTheme = false
-
-  # center theme with default width
-  centerTheme = false
-
-  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
-  # then the file will be used as a cover automatically.
-  # With this option you don't have to put the `cover` param in a front-matter.
-  autoCover = true
-
-  # set post to show the last updated
-  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  showLastUpdated = false
-
-  # set a custom favicon (default is a `themeColor` square)
-  # favicon = "favicon.ico"
-
-  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
-  # updatedDatePrefix = "Updated"
-
-  # set all headings to their default size (depending on browser settings)
-  # oneHeadingSize = true # default
-
-  # whether to show a page's estimated reading time
-  # readingTime = false # default
-
-  # whether to show a table of contents
-  # can be overridden in a page's front-matter
-  # Toc = false # default
-
-  # set title for the table of contents
-  # can be overridden in a page's front-matter
-  # TocTitle = "Table of Contents" # default
-
-
-[params.twitter]
-  # set Twitter handles for Twitter cards
-  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
-  # do not include @
-  creator = ""
-  site = ""
-
-[languages]
-  [languages.en]
-    languageName = "English"
-    title = "Terminal"
-    subtitle = "A simple, retro theme for Hugo"
-    owner = ""
-    keywords = ""
-    copyright = ""
-    menuMore = "Show more"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
-    missingContentMessage = "Page not found..."
-    missingBackButtonLabel = "Back to home page"
-    minuteReadingTime = "min read"
-    words = "words"
-
-    [languages.en.params.logo]
-      logoText = "Terminal"
-      logoHomeLink = "/"
-
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about"
-      [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
-
-[module]
-  # In case you would like to make changes to the theme and keep it locally in you repository,
-  # uncomment the line below (and correct the local path if necessary).
-  # --
-  # replacements = "github.com/panr/hugo-theme-terminal -> themes/terminal"
-[[module.imports]]
-  path = 'github.com/panr/hugo-theme-terminal'
-```
-
-to `config.toml` file in your Hugo root directory and change params fields. In case you need, here's [a YAML version](https://gist.github.com/panr/9eeea6f595c257febdadc11763e3a6d1).
-
-**NOTE:** Please keep in mind that currently `main menu` doesn't support nesting.
+The theme doesn't require any advanced configuration. Just copy the `config.toml` of the example site.
 
 ## Post archetype
 
@@ -286,34 +165,9 @@ If you are using as a remote Hugo Module (you don't have the theme files in the 
 
 If you have the theme files in the theme directory, then you can directly edit anything in the theme, you just have to go to `themes/terminal` and modify the files. No compilation step needed.
 
-## Found a bug? <a id="bug" />
-
-If you spot any bugs, please use [Issue Tracker](https://github.com/panr/hugo-theme-terminal/issues) or create a new [Pull Request](https://github.com/panr/hugo-theme-terminal/pulls) to fix the issue.
-
-## New cool idea or feature? <a id="feature" />
-
-The theme is in constant development since 2019 and has got many cool features that helped many of you and made the theme better. But there were also many features that I wasn't sure about because I want to keep the theme as simple as possible.
-
-So, let's say you have an idea of how to extend the theme. That's cool and you're welcome to do that, just follow these steps:
-
-- fork the theme
-- implement the feature
-- write an instruction how to use the feature
-- give a working example of the implementation for other users
-- add info about your work to `COMMUNITY-FEATURES.md`
-- make a PR with edited `COMMUNITY-FEATURES.md`
-
-This will help keeping the theme close to its roots, and also allow anyone who wishes to improve it and match their needs, to do whatever they want.
-
-Sounds OK? Cool, let's rock! 🤘
-
-## Terminal theme user?
-
-I'd be happy to know more about you and what you are doing. If you want to share it, please make a contribution and [add your site to the list](https://github.com/panr/hugo-theme-terminal/blob/master/USERS.md)! 🤗
-
-
 ## License
 
 Copyright © 2019-2022 Radosław Kozieł ([@panr](https://twitter.com/panr))
+Copyright ©      2024 Lou Woell
 
 The theme is released under the MIT License. Check the [original theme license](https://github.com/panr/hugo-theme-terminal/blob/master/LICENSE.md) for additional licensing information.
