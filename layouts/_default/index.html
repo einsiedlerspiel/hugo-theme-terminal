@@ -1,9 +1,16 @@
 {{ define "main" }}
+  {{ partial "cover.html" . }}
+  {{ if .Title }}
+    <h1 class="post-title">
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </h1>
+  {{ end }}
   {{ if .Content }}
     <div class="index-content {{ if .Params.framed -}}framed{{- end -}}">
       {{ .Content }}
     </div>
   {{ end }}
+  {{ if not .Params.NoPosts }}
   <div class="posts">
     {{ $isntDefault := not (or (eq (trim $.Site.Params.contentTypeName " ") "posts") (eq (trim $.Site.Params.contentTypeName " ") "")) }}
     {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
@@ -13,7 +20,6 @@
       {{ $PageContext = .Site }}
     {{ end }}
     {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
-
     {{ range $paginator.Pages }}
       <article class="post on-list">
         <h1 class="post-title">
@@ -63,4 +69,5 @@
 
     {{ partial "pagination.html" . }}
   </div>
+  {{ end }}
 {{ end }}

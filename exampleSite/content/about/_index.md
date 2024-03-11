@@ -1,8 +1,8 @@
-+++
-title = "About"
-date = "2019-01-25"
-author = "Radek"
-+++
+---
+title: about
+date: "2019-01-25"
+author: "Radek"
+---
 
 # Hi there
 
@@ -20,3 +20,8 @@ The theme includes:
 - mobile friendly layout
 
 So, there you have it... enjoy!
+
+{{%framed%}}
+This Version of the theme also includes the `framed` shortcode for easy framing
+of stuff.
+{{%/framed%}}
