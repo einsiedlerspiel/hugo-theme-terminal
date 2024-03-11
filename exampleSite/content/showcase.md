@@ -14,6 +14,43 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum met
 
 Nulla libero turpis, lacinia vitae cursus ut, auctor dictum nisl. Fusce varius felis nec sem ullamcorper, at convallis nisi vestibulum. Duis risus odio, porta sit amet placerat mollis, tincidunt non mauris. Suspendisse fringilla, `odio a dignissim pharetra`, est urna sollicitudin urna, eu scelerisque magna ex vitae tellus.
 
+
+```common-lisp
+(defun test (str)
+  (declare ignore str)
+  (print "Hello World"))
+
+(defun ich-bin-neu ()
+  (test "hi"))
+```
+
+
+```bash
+#!/bin/bash
+
+# This script takes on Argument, checks whether that Argument is an existing
+# file ending in .pdf and if both conditions are met, rids it of any annotations
+# saving a copy of the original file with _(clean) atteached to the name.
+
+if [ -f "$1" ]; then
+    if [ ${1: -4} == ".pdf" ]; then
+        filename="${1/.pdf/_clean.pdf}"
+        pdftk "$1" output uncompressed.pdf uncompress
+        LANG=C sed -n '/^\/Annots/!p' uncompressed.pdf > stripped.pdf
+        pdftk stripped.pdf output "$filename" compress
+        rm uncompressed.pdf
+        rm stripped.pdf
+        echo Done!
+    else
+        echo "$1" is not a pdf
+        exit 1
+    fi
+else
+    echo "$1" does not exist
+    exit 1
+fi
+```
+
 ```css
 /* PostCSS code */
 
@@ -68,6 +105,31 @@ window.addEventListener('resize', isMobileMenu)
     {{ end }}
   </div>
 </section>
+```
+
+```c
+/*Some C code*/
+
+void
+commitinfo_free(struct commitinfo *ci)
+{
+	size_t i;
+
+	if (!ci)
+		return;
+	if (ci->deltas)
+		for (i = 0; i < ci->ndeltas; i++)
+			deltainfo_free(ci->deltas[i]);
+
+	free(ci->deltas);
+	git_diff_free(ci->diff);
+	git_tree_free(ci->commit_tree);
+	git_tree_free(ci->parent_tree);
+	git_commit_free(ci->commit);
+	git_commit_free(ci->parent);
+	memset(ci, 0, sizeof(*ci));
+	free(ci);
+}
 ```
 
 #### Header 4

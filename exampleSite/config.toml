@@ -10,6 +10,16 @@ paginate = 5
   fullWidthTheme = false
   centerTheme = true
 
+[markup.highlight]
+  codeFences = true
+  guessSyntax = true
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = true
+  lineNumbersInTable = false
+  tabWidth = 4
+  noClasses = false
+
 [languages]
   [languages.en]
     title = "Terminal"
