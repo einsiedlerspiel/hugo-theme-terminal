@@ -1,0 +1,42 @@
+.tabContainer > .tabs > div:not(:first-child) {
+  display: none;
+}
+
+.tabContainer > .tabs * {
+    margin-top: 0px;
+    padding-top: 0.25em;
+}
+
+.tabContainer > .tabBar {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.tabContainer > .tabBar button {
+  border: 0px solid $background; 
+  border-bottom: 1px solid $background;
+  text-decoration: none;
+  color: mix($background, $color, 60%);
+  margin: 0 .1em 0 0;
+  font: inherit;
+  font-weight: normal;
+  font-size: 1em;
+  flex: 1;
+  transition: all .35s ease;
+  background: $background;
+}
+
+.tabContainer > .tabBar button.active {
+  border-bottom: 1px solid $accent;
+  background: inherit;
+  color: mix($color, $background, 60%)
+}
+
+.tabContainer > .tabBar button:hover {
+  background: inherit;
+  color: $accent;
+}

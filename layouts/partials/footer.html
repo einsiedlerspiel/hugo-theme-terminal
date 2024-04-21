@@ -13,7 +13,8 @@
 </footer>
 
 {{ $menu := resources.Get "js/menu.js" | js.Build }}
-{{ $bundle := slice $menu | resources.Concat "bundle.js" | resources.Minify }}
+{{ $tabbedContainer := resources.Get "js/tabbedContainer.js" }}
+{{ $bundle := slice $tabbedContainer $menu | resources.Concat "bundle.js" }}
 
 <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
 
