@@ -2,6 +2,9 @@
 title: "Showcase"
 date: "2018-07-18"
 author: "Hello Robot"
+toc: true
+LiveDoc: true
+lastmod: "2024-08-25"
 ---
 
 # Header 1: Some Formatting
@@ -27,7 +30,12 @@ porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
 
 ## Header 2: Tabbed Containers
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. **Donec quis dolor nec nunc mollis interdum vel in purus**. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum
+metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur
+ipsum dui, aliquet nec commodo at, tristique eget ante. **Donec quis dolor nec
+nunc mollis interdum vel in purus**. Sed vitae leo scelerisque, sollicitudin
+elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique
+porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
 
 {{< tabbed >}}
 {{% tab name="english" %}}

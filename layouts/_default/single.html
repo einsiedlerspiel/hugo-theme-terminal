@@ -31,6 +31,18 @@
   {{ end }}
   {{ partial "cover.html" . }}
 
+  {{ if (.Params.LiveDoc) }}
+    <div class="index-content framed", style="margin: 3em">
+
+      This is a living document and subject to change. <br>
+
+      <time class="post-date post-meta" >
+        {{ "Last Updated: " }} {{- .Lastmod.Format "2006-01-02" -}}
+      </time>
+
+    </div>
+  {{ end }}
+
   {{ if (.Params.Toc | default .Site.Params.Toc) }}
     <div class="table-of-contents">
       <h2>
