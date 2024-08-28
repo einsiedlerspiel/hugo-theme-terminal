@@ -5,6 +5,7 @@ author: "Hello Robot"
 toc: true
 LiveDoc: true
 lastmod: "2024-08-25"
+cover: /img/BoyWithMachine.png
 ---
 
 # Header 1: Some Formatting
