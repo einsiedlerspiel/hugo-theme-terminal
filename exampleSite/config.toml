@@ -35,8 +35,11 @@ paginate = 5
     [languages.en.params.logo]
         logoText = "Terminal"
     	logoHomeLink = "/"
-
     [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "blog"
+        name = "blog"
+        url = "/posts"
       [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
