@@ -42,7 +42,7 @@
             {{ else if .Description }}
               {{ .Description | markdownify }}
             {{ else }}
-              {{ .Summary }}
+              {{ .Summary | plainify }}
             {{ end }}
 
             {{ if not .Params.showFullContent }}
