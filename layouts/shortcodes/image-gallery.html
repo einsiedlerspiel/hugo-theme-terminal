@@ -1,0 +1,38 @@
+<style>
+    .image-gallery {overflow: auto; margin-left: -1%!important;}
+    .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 19%;}
+    .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+    .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+    .image-gallery li a img {width: 100%; display: block;}
+    .image-gallery .bigpic {max-height: 500px; display: block; margin: auto auto;}
+</style>
+
+{{ $dir := string (.Get "gallery_dir") }}
+<ul class="image-gallery">
+  {{- range page.Resources.Match (printf "%s/*.*" $dir) -}}
+    {{- $imagetitle := index (split .Name ".") 0 -}}
+    <li onclick="embiggen(event)" >
+      <a href="{{ (.Fit "1600x1600 q50").Permalink }}" title="{{ $imagetitle }}" class="lightbox-image">
+        <img src="{{ (.Fill "300x300 q50").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
+        <span>{{ $imagetitle }}</span>
+      </a>
+    </li>
+  {{ end }}
+  <img class="bigpic" src="" title="" >
+</ul>
+
+<script>
+ function embiggen (e) {
+
+   e.preventDefault()
+
+   let img = e.target.parentElement
+   let big = e.currentTarget.parentElement.lastElementChild
+
+   if (big.src == img.href)
+     big.src = ""
+   else
+     big.src = img.href
+
+ }
+</script>
